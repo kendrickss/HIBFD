@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Hiro ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+  --green:#496b55;
+  --dark:#294234;
+  --cream:#fafcf8;
+  --white:#fff;
+  --text:#304438;
+  --muted:#718074;
+  --light:#edf4ed;
+  --line:#dce8dc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+.progress{
+  position:fixed;top:0;left:0;height:4px;width:0%;
+  background:var(--green);z-index:999;border-radius:0 5px 5px 0;
+}
+.float{
+  position:fixed;color:#78917f;opacity:.16;font-size:22px;
+  pointer-events:none;z-index:0;animation:float 7s ease-in-out infinite;
+}
+.f1{left:7%;top:20%}.f2{right:8%;top:34%;animation-delay:2s}
+.f3{left:12%;bottom:18%;animation-delay:4s}.f4{right:12%;bottom:25%;animation-delay:1s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(8deg)}}
+section{width:min(900px,92vw);margin:auto;position:relative;z-index:1}
+.small-label{
+  color:var(--green);font-size:12px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:14px;
+}
+h1,h2{font-family:'Playfair Display',serif;color:var(--dark)}
+
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:70px 0 55px;
+}
+.hero h1{font-size:clamp(48px,9vw,92px);line-height:1;margin-bottom:15px}
+.hero-sub{
+  max-width:600px;color:var(--muted);line-height:1.8;font-size:15px;margin-bottom:28px
+}
+
+/* FOTO 16:9 — MEMANJANG KE SAMPING */
+.hero-photo{
+  width:min(800px,92vw);
+  aspect-ratio:16 / 9;
+  height:auto;
+  margin:0 auto 24px;
+  padding:8px;
+  border-radius:28px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 20px 55px rgba(41,66,52,.15);
+}
+.hero-photo img{
+  width:100%;height:100%;display:block;object-fit:cover;
+  object-position:center;border-radius:21px;
+}
+
+/* MUSIC PALING ATAS */
+.music-box{
+  width:min(700px,92vw);
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:24px;padding:17px;
+  box-shadow:0 15px 40px rgba(41,66,52,.09);
+  margin-bottom:25px;
+}
+.music-top{display:flex;align-items:center;gap:13px;text-align:left}
+.music-icon{
+  width:45px;height:45px;border-radius:50%;background:var(--light);
+  display:flex;align-items:center;justify-content:center;color:var(--green);
+  flex-shrink:0;font-size:20px;
+}
+.music-info{flex:1}
+.music-title{font-weight:600;color:var(--dark);font-size:14px}
+.music-note{font-size:12px;color:var(--muted);margin-top:3px}
+.play-btn{
+  border:0;background:var(--green);color:white;padding:11px 19px;
+  border-radius:30px;font-family:inherit;font-weight:600;cursor:pointer;
+  transition:.2s;white-space:nowrap
+}
+.play-btn:hover{transform:translateY(-2px);opacity:.92}
+.music-hint{margin-top:11px;font-size:11px;color:var(--muted)}
+.progress-track{
+  width:100%;height:5px;background:var(--light);border-radius:10px;
+  margin-top:14px;overflow:hidden
+}
+.progress-song{height:100%;width:0;background:var(--green);transition:width .2s linear}
+
+.scroll{margin-top:8px;font-size:11px;color:#87958a;letter-spacing:1.5px;text-transform:uppercase}
+.scroll span{display:block;margin-top:8px;font-size:17px;animation:down 1.5s infinite}
+@keyframes down{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.content{padding:90px 0}
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:28px;
+  padding:38px;margin-bottom:28px;box-shadow:0 14px 40px rgba(41,66,52,.06)
+}
+.card h2{font-size:30px;margin-bottom:20px}
+.card p{font-size:15px;line-height:2;color:#536258;margin-bottom:15px}
+.card p:last-child{margin-bottom:0}
+
+.quote{text-align:center;padding:75px 25px}
+.quote-mark{
+  font-family:'Playfair Display',serif;color:var(--green);font-size:58px;
+  line-height:.6;margin-bottom:24px
+}
+.quote p{
+  max-width:650px;margin:auto;font-family:'Playfair Display',serif;
+  font-size:clamp(23px,4vw,34px);line-height:1.55;color:var(--dark)
+}
+
+.options{text-align:center;padding:80px 0}
+.options h2{font-size:34px;margin-bottom:12px}
+.options-desc{color:var(--muted);font-size:14px;margin-bottom:30px}
+.option-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.option{
+  border:1px solid var(--line);background:white;color:var(--dark);
+  padding:14px 22px;border-radius:30px;font-family:inherit;cursor:pointer;
+  transition:.25s
+}
+.option:hover{background:var(--green);color:white;transform:translateY(-3px)}
+.option-result{min-height:28px;margin-top:24px;color:var(--green);font-weight:600}
+
+.final{
+  min-height:75vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:80px 0
+}
+.final h2{font-size:clamp(40px,8vw,72px);margin-bottom:20px}
+.final p{max-width:620px;color:var(--muted);line-height:2;font-size:15px}
+.heart{margin-top:30px;font-size:28px;color:var(--green);animation:heartbeat 1.8s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.15)}30%{transform:scale(1)}}
+
+@media(max-width:650px){
+  .hero{padding-top:65px}
+  .hero h1{font-size:55px}
+  .hero-photo{width:92vw;aspect-ratio:16 / 9;height:auto;padding:6px;border-radius:22px}
+  .hero-photo img{border-radius:16px}
+  .music-box{padding:14px}
+  .play-btn{padding:10px 15px;font-size:12px}
+  .card{padding:27px 23px;border-radius:23px}
+  .card h2{font-size:26px}
+  .card p{font-size:14px;line-height:1.9}
+}
+</style>
+</head>
+
+<body>
+<div class="progress" id="progress"></div>
+<div class="float f1">♡</div>
+<div class="float f2">☘</div>
+<div class="float f3">♡</div>
+<div class="float f4">☘</div>
+
+<!-- Lagu lokal: mulai dari 0:00 -->
+<audio id="song" preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+  <div class="small-label">Boyfriend Day · for someone special</div>
+  <h1>For Hiro.</h1>
+
+  <p class="hero-sub">
+    A little something I made for you,
+    because sometimes words on a chat just don't feel enough.
+  </p>
+
+  <div class="hero-photo">
+    <img src="https://i.ibb.co.com/00tDgFw/78c18f12cb90aaa8a1d55282dcf7b8c1.gif" alt="For Hiro">
+  </div>
+
+  <div class="music-box">
+    <div class="music-top">
+      <div class="music-icon">♫</div>
+
+      <div class="music-info">
+        <div class="music-title">a little soundtrack for you ♡</div>
+        <div class="music-note">starts from the beginning · press play</div>
+      </div>
+
+      <button class="play-btn" id="playBtn">▶ Play</button>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-song" id="songProgress"></div>
+    </div>
+
+    <div class="music-hint">
+      Play it first, then take your time scrolling.
+    </div>
+  </div>
+
+  <div class="scroll">scroll slowly<span>⌄</span></div>
+</section>
+
+<section class="content">
+  <div class="card">
+    <div class="small-label">a little letter</div>
+    <h2>Hi, sayang.</h2>
+
+    <p>
+      I don't really know how to start this without sounding a little cheesy,
+      but I guess that's okay. It's Boyfriend Day, and obviously I couldn't
+      just let the day pass like it's nothing.
+    </p>
+
+    <p>
+      So, here I am, making you this little corner of the internet.
+      Not because I have to, but because I wanted to give you something
+      that feels a little more personal. Something that you can come back
+      to whenever you want.
+    </p>
+
+    <p>
+      Lu mungkin nggak sadar, tapi having you around has become one of
+      those little things that quietly makes my days better. Sometimes it's
+      our conversations, sometimes it's the random things you say, and
+      sometimes it's literally just knowing that you're there.
+    </p>
+
+    <p>
+      I love the way you can make ordinary moments feel less ordinary.
+      Even when we're doing absolutely nothing, talking about random stuff,
+      or just sitting there in silence, somehow it still feels nice.
+    </p>
+
+    <p>
+      And I know I'm not always perfect at saying what I feel. Sometimes gua
+      bercanda terlalu banyak, sometimes gua act like I don't care that much,
+      but deep down, you matter to me more than I probably show.
+    </p>
+
+    <p>
+      Thank you for being someone I can laugh with, talk to, annoy, miss,
+      and care about. Thank you for every little moment we've had so far.
+    </p>
+
+    <p>
+      I hope you know that you deserve to feel loved, appreciated, and chosen —
+      not only today, but on the random ordinary days too.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="small-label">little things</div>
+    <h2>Things I love about you.</h2>
+
+    <p>
+      Your little habits. Your way of talking. The random things you tell me.
+      The way you make me smile without even trying.
+    </p>
+
+    <p>
+      I love the comfortable feeling that comes with you. It doesn't always
+      have to be something big. Sometimes the smallest conversations are the
+      ones I end up remembering the most.
+    </p>
+
+    <p>
+      And honestly, I like having someone who feels like home without actually
+      having to say the word home.
+    </p>
+  </div>
+
+  <div class="quote">
+    <div class="quote-mark">“</div>
+    <p>If I had to choose one person to keep in my ordinary days, I'd still choose you.</p>
+  </div>
+
+  <div class="card">
+    <div class="small-label">just so you know</div>
+    <h2>I'm glad it's you.</h2>
+
+    <p>
+      Out of all the people I could've met, I'm really glad our paths crossed.
+    </p>
+
+    <p>
+      I don't need everything to be perfect. I just want us to keep having
+      those little moments, keep talking, keep laughing, keep annoying each
+      other, and keep making memories that we'll eventually look back on.
+    </p>
+
+    <p>
+      Gua cuma berharap whatever comes next, you still know that there will
+      always be a part of me that is genuinely grateful for you.
+    </p>
+  </div>
+</section>
+
+<section class="options">
+  <div class="small-label">one important question</div>
+  <h2>So, what do you choose?</h2>
+  <p class="options-desc">choose carefully. there's only one correct answer ♡</p>
+
+  <div class="option-wrap">
+    <button class="option" onclick="choose('I choose you ♡')">I choose you ♡</button>
+    <button class="option" onclick="choose('You are my favorite')">You are my favorite</button>
+    <button class="option" onclick="choose('Super yes')">Super yes</button>
+  </div>
+
+  <div class="option-result" id="result"></div>
+</section>
+
+<section class="content">
+  <div class="card">
+    <div class="small-label">before you go</div>
+    <h2>One more thing.</h2>
+
+    <p>
+      I hope this little page made you smile, even just a little. I know it's
+      only a website, but every word here was written because there's a real
+      person behind the screen that I care about.
+    </p>
+
+    <p>
+      You don't have to do anything special today. Just be yourself, take care
+      of yourself, eat properly, get enough rest, and don't forget that someone
+      out here is always rooting for your happiness.
+    </p>
+
+    <p>
+      And if one day you randomly find this page again, I hope you remember
+      how much I wanted you to feel special when I made it.
+    </p>
+
+    <p>
+      So yeah, happy Boyfriend Day, sayang. Thank you for being here.
+      Thank you for being you.
+    </p>
+  </div>
+</section>
+
+<section class="final">
+  <div class="small-label">for you, always</div>
+  <h2>Happy Boyfriend Day.</h2>
+
+  <p>
+    I hope we get to make a lot more memories together. More random
+    conversations, more stupid jokes, more late nights, more little moments,
+    and more days where I get to call you mine.
+  </p>
+
+  <div class="heart">♡</div>
+</section>
+
+<script>
+const song = document.getElementById("song");
+const playBtn = document.getElementById("playBtn");
+const songProgress = document.getElementById("songProgress");
+
+/* PLAY / PAUSE — Replay hanya muncul saat lagu benar-benar selesai */
+playBtn.addEventListener("click", async () => {
+  try {
+    if (song.ended) song.currentTime = 0;
+
+    if (song.paused) {
+      await song.play();
+      playBtn.innerHTML = "❚❚ Pause";
+    } else {
+      song.pause();
+      playBtn.innerHTML = "▶ Play";
+    }
+  } catch (e) {
+    console.error("Audio error:", e);
+    playBtn.innerHTML = "▶ Play";
+  }
+});
+
+song.addEventListener("timeupdate", () => {
+  if (Number.isFinite(song.duration) && song.duration > 0) {
+    songProgress.style.width =
+      (song.currentTime / song.duration * 100) + "%";
+  }
+});
+
+song.addEventListener("ended", () => {
+  playBtn.innerHTML = "↻ Replay";
+  songProgress.style.width = "0%";
+});
+
+function choose(answer){
+  const result = document.getElementById("result");
+
+  if(answer === "I choose you ♡"){
+    result.innerHTML = "Good. That's exactly what I wanted to hear ♡";
+  } else if(answer === "You are my favorite"){
+    result.innerHTML = "As you should. Now come here, sayang. ♡";
+  } else {
+    result.innerHTML = "SUPER YES accepted. No take backs. ♡";
+  }
+}
+
+window.addEventListener("scroll", () => {
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const progress =
+    scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+  document.getElementById("progress").style.width = progress + "%";
+});
+</script>
+
+</body>
+</html>
